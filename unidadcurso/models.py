@@ -9,7 +9,8 @@ class Unidadcurso(models.Model):
   desc_larga = models.CharField(max_length=255)
 
   def __str__(self):
-      return '{}'.format(self.curso,self.desc_corta)
+    #   return '{}'.format(self.curso) + self.desc_corta
+      return str(self.curso) + ' - ' +str(self.desc_corta)
 
   class Meta:
       verbose_name_plural = "Unidadcursos"
