@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 #Permite que tus apis puedan ser accedidas publicamente
 CORS_ALLOW_ALL_ORIGINS = True
