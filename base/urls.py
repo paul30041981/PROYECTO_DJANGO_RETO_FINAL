@@ -42,5 +42,7 @@ urlpatterns = [
     path('interesado/', include('interesado.urls')),
     path('leccionunidad/', include('leccionunidad.urls')),
     path('unidadcurso/', include('unidadcurso.urls')),
+    path('carrito/', include('carrito.urls')),
+    path('ordencompra/', include('ordencompra.urls')),
     # path('app/', include('app.urls')),
 ]

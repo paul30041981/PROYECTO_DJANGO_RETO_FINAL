@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import LeccionunidadViewSet
+from .views import LeccionunidadListView
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register('v1/leccionesunidades', LeccionunidadViewSet, basename='leccionesunidades')
+# router.register('v1/leccionesunidades', LeccionunidadViewSet, basename='leccionesunidades')
 
 urlpatterns = [
+  path('v1/leccionesunidades/', LeccionunidadListView.as_view(), name='leccionesunidades'),
 ]
 
 urlpatterns += router.urls

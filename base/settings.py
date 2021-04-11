@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
+# PARA REROKU #########
+import dj_database_url
+import django_heroku
+#######################
 import datetime
 from datetime import timedelta
 from pathlib import Path
@@ -56,6 +60,8 @@ INSTALLED_APPS = [
     'interesado',
     'unidadcurso',
     'leccionunidad',
+    'carrito',
+    'ordencompra',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +109,12 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+# PARA HEROKU#############################
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+###########################################
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -178,3 +190,8 @@ SIMPLE_JWT = {
     'ALGORITHM': 'HS256',
     'SIGNING_KEY': os.environ.get('SECRET_KEY'),
 }
+
+
+# PARA HEROKU#############################
+django_heroku.settings(locals())
+##########################################

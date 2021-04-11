@@ -4,7 +4,7 @@ from unidadcurso.models import Unidadcurso
 # Create your models here.
 class Leccionunidad(models.Model):
   id = models.AutoField(primary_key=True)
-  unidad = models.ForeignKey(Unidadcurso, on_delete=models.CASCADE)
+  unidad = models.ForeignKey(Unidadcurso, related_name='lecciones', on_delete=models.CASCADE)
   desc_corta = models.CharField(max_length=100, null=False)
   desc_larga = models.CharField(max_length=255)
 
